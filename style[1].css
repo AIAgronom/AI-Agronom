@@ -1,0 +1,34 @@
+:root{
+  --bg:#f6f6f4; --card:#ffffff; --text:#243238; --muted:#66757f; --accent:#2e7d32;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+.hero{display:flex;gap:20px;align-items:center;justify-content:center;padding:24px 16px;background:linear-gradient(180deg,#f0f6ee,#f9faf9)}
+.hero .avatar{width:180px;height:auto;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.08);background:#fff}
+.hero-text h1{margin:0;font-size:36px}
+.hero-text p{margin:6px 0 14px;color:var(--muted);max-width:680px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:10px 16px;border-radius:10px}
+.btn.small{padding:8px 12px;font-size:14px}
+.container{max-width:920px;margin:22px auto;padding:0 14px}
+.card{background:var(--card);border-radius:14px;padding:18px;margin:14px 0;box-shadow:0 8px 28px rgba(0,0,0,.06);border:1px solid #eef1ee}
+h2{margin:0 0 10px}
+.quick-questions{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.quick-questions .qq{background:#eef7ec;border:1px solid #d9e7d7;border-radius:10px;padding:6px 10px;cursor:pointer}
+.quick-questions .qq:hover{filter:brightness(.98)}
+.chatbox{border:1px solid #e7ece8;border-radius:10px;background:#fbfbfb;height:320px;overflow:auto;padding:10px}
+.msg{max-width:88%;width:fit-content;margin:8px 0;padding:10px 12px;border-radius:10px;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+.msg.bot{background:#eef7ec;border-top-left-radius:4px}
+.msg.user{background:#eaf2ff;margin-left:auto;border-top-right-radius:4px}
+.input-row{display:flex;gap:8px;margin-top:10px}
+.input-row input{flex:1;padding:12px;border:1px solid #dfe5e1;border-radius:10px;font-size:16px}
+.input-row button{background:var(--accent);border:none;color:#fff;padding:0 16px;border-radius:10px;font-size:16px;cursor:pointer}
+.input-row button:active{transform:translateY(1px)}
+.hint{color:var(--muted);font-size:12px;margin-top:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.grid label{display:flex;flex-direction:column;gap:6px}
+.grid input{padding:10px;border:1px solid #dfe5e1;border-radius:10px}
+.calc-actions{display:flex;align-items:center;gap:12px;margin-top:8px}
+.calc-out{font-weight:600}
+.footer{display:grid;place-items:center;color:#90a4ae;padding:20px 0}
+@media (max-width:640px){ .hero{flex-direction:column;text-align:center}.hero .avatar{width:160px}}

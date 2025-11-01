@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ИИ-Агроном — Казахстан</title>
+  <link rel="stylesheet" href="style.css"/>
+  <meta name="description" content="ИИ-Агроном — MVP чат-помощник для агрономов Казахстана. Фокус: морковь (Павлодар). Быстрые вопросы и мини‑калькулятор нормы высева.">
+</head>
+<body>
+  <header class="hero">
+    <img src="avatar.png" alt="AI Agronom avatar" class="avatar"/>
+    <div class="hero-text">
+      <h1>ИИ‑Агроном</h1>
+      <p>Помощник по сельскому хозяйству в условиях Казахстана. MVP: ответы по <strong>моркови</strong> для Павлодарской области.</p>
+      <a class="btn" href="#chat">К боту</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="chat" class="card">
+      <h2>Чат с ботом</h2>
+      <div class="quick-questions">
+        <button class="qq">Норма высева моркови в Павлодаре?</button>
+        <button class="qq">Когда сеять морковь весной?</button>
+        <button class="qq">Как поливать морковь?</button>
+        <button class="qq">Какая температура для роста?</button>
+        <button class="qq">Какие почвы и pH нужны?</button>
+      </div>
+
+      <div id="chatbox" class="chatbox">
+        <div class="msg bot">Привет! Нажми на быстрый вопрос выше или задай свой.</div>
+      </div>
+      <form id="form" class="input-row">
+        <input id="question" type="text" placeholder="Например: Норма высева моркови в Павлодаре?" autocomplete="off"/>
+        <button type="submit">Отправить</button>
+      </form>
+      <p class="hint">Это MVP без платного ИИ. Позже подключим настоящую модель.</p>
+    </section>
+
+    <section class="card">
+      <h2>Мини‑калькулятор нормы высева (кг/га)</h2>
+      <div class="grid">
+        <label>Целевая густота, растений/м²
+          <input id="dens" type="number" value="100" min="30" max="200" step="1">
+        </label>
+        <label>1000‑семенная масса (TSW), г
+          <input id="tsw" type="number" value="1.2" min="0.6" max="2.0" step="0.1">
+        </label>
+        <label>Лаб. всхожесть, %
+          <input id="germ" type="number" value="80" min="50" max="100" step="1">
+        </label>
+        <label>Полевое сохранение, %
+          <input id="field" type="number" value="60" min="30" max="100" step="1">
+        </label>
+        <label>Междурядье, см
+          <input id="row" type="number" value="45" min="30" max="70" step="5">
+        </label>
+      </div>
+      <div class="calc-actions">
+        <button id="calcBtn" class="btn small">Рассчитать</button>
+        <span id="calcOut" class="calc-out"></span>
+      </div>
+      <p class="hint">Формула: кг/га = <code>густота × TSW × 100 / (всхожесть × полевая сохранность)</code>. Для ориентира по региону: 4.5–5.5 кг/га при междурядье 45 см.</p>
+    </section>
+
+    <section class="card">
+      <h2>О проекте</h2>
+      <p><strong>Цель:</strong> дать агрономам Казахстана быстрые рекомендации с учётом местных условий. MVP фокусируется на моркови в Павлодарской области.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>© AI Agronom · MVP</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
